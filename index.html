@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodi S1 Bisnis Digital - Universitas Al-Irsyad Cilacap (UNAIC)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#4f46e5',
+                            600: '#4338ca',
+                            700: '#3730a3',
+                            900: '#1e1b4b',
+                        },
+                        unaic: {
+                            emerald: '#059669',
+                            teal: '#0d9488',
+                            gold: '#f59e0b',
+                            dark: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #059669 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pulse-glow {
+            box-shadow: 0 0 25px rgba(5, 150, 105, 0.4);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-unaic-emerald selection:text-white">
+
+    <a href="https://wa.me/6285293504432?text=Halo%20Admin%20PMB%20Bisnis%20Digital%20Universitas%20Al-Irsyad%20Cilacap,%20saya%20ingin%20bertanya%20seputar%20pendaftaran" 
+       target="_blank" 
+       rel="noopener"
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-white pulse-glow group"
+       title="Hubungi WA Admisi PMB UNAIC">
+        <div class="relative flex items-center justify-center">
+            <i class="fa-brands fa-whatsapp text-2xl animate-bounce"></i>
+            <span class="absolute -top-1 -right-1 flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-300"></span>
+            </span>
+        </div>
+        <div class="text-left hidden sm:block">
+            <span class="text-[10px] uppercase block tracking-wider text-emerald-100 font-medium">Tanya PMB UNAIC</span>
+            <span class="text-xs font-extrabold leading-none">0852-9350-4432</span>
+        </div>
+    </a>
+
+    <nav class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo UNAIC Bisnis Digital -->
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-brand-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-emerald-600/25">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 block leading-none">
+                            Bisnis<span class="text-emerald-600">Digital</span>
+                        </span>
+                        <span class="text-[10px] tracking-wider uppercase font-semibold text-slate-500 block mt-1">
+                            Universitas Al-Irsyad Cilacap (UNAIC)
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-7 font-medium text-sm text-slate-600">
+                    <a href="#beranda" class="hover:text-emerald-600 transition-colors">Beranda</a>
+                    <a href="#tentang" class="hover:text-emerald-600 transition-colors">Tentang UNAIC</a>
+                    <a href="#kurikulum" class="hover:text-emerald-600 transition-colors">Kurikulum</a>
+                    <a href="#karir" class="hover:text-emerald-600 transition-colors">Prospek Karir</a>
+                    <a href="#kalkulator" class="hover:text-emerald-600 transition-colors">Estimasi Biaya</a>
+                    <a href="#kontak" class="hover:text-emerald-600 transition-colors">Kontak</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/6285293504432?text=Halo%20Admin%20PMB%20UNAIC,%20saya%20ingin%20konsultasi%20pendaftaran" 
+                       target="_blank" 
+                       class="px-4 py-2.5 rounded-xl border border-emerald-200 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 text-sm font-bold transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base text-emerald-600"></i> 
+                        <span>0852-9350-4432</span>
+                    </a>
+                    <button onclick="openModal('registerModal')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-brand-600 hover:opacity-95 text-white text-sm font-semibold shadow-lg shadow-emerald-600/25 transition-all transform hover:-translate-y-0.5">
+                        Daftar PMB
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="lg:hidden flex items-center gap-2">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block py-2 text-slate-700 hover:text-emerald-600 font-medium">Beranda</a>
+            <a href="#tentang" class="block py-2 text-slate-700 hover:text-emerald-600 font-medium">Tentang UNAIC</a>
+            <a href="#kurikulum" class="block py-2 text-slate-700 hover:text-emerald-600 font-medium">Kurikulum</a>
+            <a href="#karir" class="block py-2 text-slate-700 hover:text-emerald-600 font-medium">Prospek Karir</a>
+            <a href="#kalkulator" class="block py-2 text-slate-700 hover:text-emerald-600 font-medium">Estimasi Biaya</a>
+            <a href="#kontak" class="block py-2 text-slate-700 hover:text-emerald-600 font-medium">Kontak</a>
+            <div class="pt-4 flex flex-col gap-2">
+                <a href="https://wa.me/6285293504432?text=Halo%20Admin%20PMB%20UNAIC" target="_blank" class="w-full py-2.5 rounded-xl border border-emerald-500 text-emerald-700 font-bold text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> WA PMB: 0852-9350-4432
+                </a>
+                <button onclick="openModal('registerModal')" class="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-center">
+                    Daftar PMB Online
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="beranda" class="pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden relative bg-slate-950 text-white">
+        <!-- Background Glow Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-brand-500/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold backdrop-blur-sm">
+                        <span class="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Fakultas Ekonomi &amp; Bisnis • Universitas Al-Irsyad Cilacap
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Cetak <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-300">Digitalpreneur</span> &amp; Pemimpin Ekonomi Masa Depan
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Program Studi S1 Bisnis Digital UNAIC mengintegrasikan ilmu manajemen bisnis modern, strategi digital marketing, e-commerce, dan teknologi finansial dengan nilai-nilai etika profesional.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <button onclick="openModal('registerModal')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:opacity-95 text-white font-bold shadow-xl shadow-emerald-600/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <span>Daftar PMB Online</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button>
+                        <a href="https://wa.me/6285293504432?text=Halo%20Admin%20PMB%20UNAIC,%20saya%20tertarik%20dengan%20Prodi%20Bisnis%20Digital" 
+                           target="_blank" 
+                           class="w-full sm:w-auto px-8 py-4 rounded-xl border border-emerald-500/40 bg-emerald-950/40 hover:bg-emerald-900/50 text-emerald-300 font-bold transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i>
+                            <span>Chat WA: 0852-9350-4432</span>
+                        </a>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">S.Bns.</div>
+                            <div class="text-xs sm:text-sm text-slate-400">Gelar Kelulusan Resmi</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">UNAIC</div>
+                            <div class="text-xs sm:text-sm text-slate-400">Kampus Unggulan Cilacap</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-amber-400">100%</div>
+                            <div class="text-xs sm:text-sm text-slate-400">Peluang Karir &amp; Magang</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card Graphic -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800 backdrop-blur-xl shadow-2xl space-y-6">
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xl">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white text-base">Fokus Keahlian Utama</h3>
+                                        <p class="text-xs text-slate-400">Prodi Bisnis Digital UNAIC</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                                    Siap Kerja 2026+
+                                </span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-bullhorn text-amber-400"></i>
+                                        <span class="text-sm text-slate-200 font-medium">Digital Marketing &amp; Social Strategy</span>
+                                    </div>
+                                    <span class="text-xs text-emerald-400 font-semibold">Projek Industri</span>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-cart-shopping text-cyan-400"></i>
+                                        <span class="text-sm text-slate-200 font-medium">E-Commerce &amp; Marketplace Ops</span>
+                                    </div>
+                                    <span class="text-xs text-emerald-400 font-semibold">Toko Digital</span>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-lightbulb text-emerald-400"></i>
+                                        <span class="text-sm text-slate-200 font-medium">Technopreneurship &amp; Startup</span>
+                                    </div>
+                                    <span class="text-xs text-emerald-400 font-semibold">Inkubasi Bisnis</span>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-chart-pie text-indigo-400"></i>
+                                        <span class="text-sm text-slate-200 font-medium">Business Analytics &amp; Data Insights</span>
+                                    </div>
+                                    <span class="text-xs text-emerald-400 font-semibold">Praktek Software</span>
+                                </div>
+                            </div>
+
+                            <!-- Direct WA Info Banner -->
+                            <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-900/60 to-teal-900/60 border border-emerald-500/30 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[11px] text-emerald-200">Layanan Informasi WhatsApp PMB:</p>
+                                    <p class="text-sm font-extrabold text-white">0852-9350-4432</p>
+                                </div>
+                                <a href="https://wa.me/6285293504432?text=Halo%20Admin%20PMB%20UNAIC" target="_blank" class="px-3 py-1.5 bg-emerald-500 text-white rounded-lg text-xs font-bold hover:bg-emerald-600 transition-colors">
+                                    Chat Sekarang
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100/80 px-3 py-1 rounded-full border border-emerald-200">
+                    Tentang Prodi Bisnis Digital UNAIC
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Mengapa Memilih Bisnis Digital Universitas Al-Irsyad Cilacap?</h2>
+                <p class="text-slate-600 mt-4 leading-relaxed">
+                    Universitas Al-Irsyad Cilacap (UNAIC) hadir dengan Program Studi S1 Bisnis Digital untuk menjawab kebutuhan percepatan transformasi ekonomi digital di wilayah Barlingmascakeb dan skala Nasional.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Kurikulum Aplikatif &amp; Modern</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Mengkombinasikan teori manajemen bisnis, keahlian pemasaran digital, pemanfaatan software analitik, hingga ekosistem start-up.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-hands-holding-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Nilai Karakter &amp; Etika Bisnis</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Selain kemampuan teknis, mahasiswa dibekali etika bisnis profesional, integritas, dan soft-skill kepemimpinan berlandaskan nilai luhur.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-building-flag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Fasilitas &amp; Jejaring Industri</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dukungan laboratorium komputer terpadu di kampus UNAIC Cilacap serta kerjasama magang industri e-commerce dan korporasi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vision Mission Card -->
+            <div class="mt-16 bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl">
+                <div class="grid md:grid-cols-2 gap-8 items-center relative z-10">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Visi Keilmuan</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold mt-2 mb-4">Menjadi Program Studi Bisnis Digital Unggulan Berdaya Saing &amp; Berkarakter</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Menghasilkan lulusan Sarjana Bisnis (S.Bns.) yang memiliki kapasitas sebagai creative digitalpreneur, analis bisnis digital, dan praktisi pemasar digital terkemuka.
+                        </p>
+                    </div>
+                    <div class="space-y-4 border-t md:border-t-0 md:border-l border-slate-800 pt-6 md:pt-0 md:pl-8">
+                        <span class="text-xs font-bold tracking-widest text-teal-300 uppercase">Misi Utama Universitas Al-Irsyad Cilacap</span>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span>Menyelenggarakan pendidikan berkualitas berbasis kurikulum bisnis digital terkini.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span>Mengembangkan penelitian dan inovasi bidang wirausaha digital dan e-commerce.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span>Mendorong pengabdian masyarakat untuk pembinaan UMKM digital di daerah Cilacap dan sekitarnya.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="kurikulum" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Struktur Kurikulum</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Kurikulum S1 Bisnis Digital UNAIC</h2>
+                <p class="text-slate-600 mt-4">Dirancang untuk menyeimbangkan fondasi akademik, keahlian teknologi, dan pembentukan pengalaman bisnis nyata.</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+                <div class="inline-flex p-1.5 bg-slate-100 rounded-2xl gap-1">
+                    <button onclick="switchTab('year1')" id="tab-year1" class="tab-btn active-tab px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-white text-emerald-700 shadow-sm">
+                        Tahun 1 (Dasar Bisnis &amp; TI)
+                    </button>
+                    <button onclick="switchTab('year2')" id="tab-year2" class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all text-slate-600 hover:text-slate-900">
+                        Tahun 2 (Digital Marketing &amp; Analitik)
+                    </button>
+                    <button onclick="switchTab('year3')" id="tab-year3" class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all text-slate-600 hover:text-slate-900">
+                        Tahun 3 (E-Commerce &amp; Startup)
+                    </button>
+                    <button onclick="switchTab('year4')" id="tab-year4" class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all text-slate-600 hover:text-slate-900">
+                        Tahun 4 (Magang Industri &amp; Tugas Akhir)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content Year 1 -->
+            <div id="content-year1" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 1</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Pengantar Bisnis Digital</h4>
+                    <p class="text-slate-600 text-sm mb-4">Prinsip bisnis modern, model platform, ekosistem startup, dan dinamika transformasi digital.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">3 SKS • Teori &amp; Kasus</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 1</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Dasar Teknologi Informasi &amp; Coding</h4>
+                    <p class="text-slate-600 text-sm mb-4">Pengenalan logika web dasar, fondasi basis data, dan arsitektur aplikasi bisnis.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">3 SKS • Praktikum Lab</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 2</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Manajemen Pemasaran</h4>
+                    <p class="text-slate-600 text-sm mb-4">Riset pasar, segmentasi konsumen, branding, dan penyusunan strategi nilai produk.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">3 SKS • Project Based</div>
+                </div>
+            </div>
+
+            <!-- Tab Content Year 2 -->
+            <div id="content-year2" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 3</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Digital Marketing &amp; Social Media</h4>
+                    <p class="text-slate-600 text-sm mb-4">Pengelolaan SEO, Meta/Google Ads, strategi konten visual, dan analitik media sosial.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">3 SKS • Praktek Campaign</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 3</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Analisis Data Bisnis</h4>
+                    <p class="text-slate-600 text-sm mb-4">Visualisasi data dengan Spreadsheet, Power BI, serta pengambilan keputusan berbasis data.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">3 SKS • Business Intelligence</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 4</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Desain UI/UX Produk Digital</h4>
+                    <p class="text-slate-600 text-sm mb-4">Riset pengalaman pengguna, prototyping wireframe aplikasi dengan Figma untuk bisnis.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">3 SKS • Studio Desain</div>
+                </div>
+            </div>
+
+            <!-- Tab Content Year 3 -->
+            <div id="content-year3" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 5</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">E-Commerce &amp; Supply Chain</h4>
+                    <p class="text-slate-600 text-sm mb-4">Operasional toko online, logistik digital, sistem pembayaran payment gateway, dan CRM.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">3 SKS • Praktek Store Management</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 5</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Inkubasi Startup &amp; Technopreneur</h4>
+                    <p class="text-slate-600 text-sm mb-4">Validasi ide bisnis, perancangan MVP (Minimum Viable Product), dan simulasi pitching.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">4 SKS • Proyek Inkubator UNAIC</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 6</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Keuangan &amp; Teknologi Finansial</h4>
+                    <p class="text-slate-600 text-sm mb-4">Perencanaan keuangan startup, investasi digital, manajemen resiko, dan adopsi Fintech.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">3 SKS • Case Study</div>
+                </div>
+            </div>
+
+            <!-- Tab Content Year 4 -->
+            <div id="content-year4" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 7</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Program Magang Industri / MBKM</h4>
+                    <p class="text-slate-600 text-sm mb-4">Pengalaman langsung bekerja penuh waktu di perusahaan mitra atau proyek bisnis mahasiswa.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">20 SKS • Magang Industri</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-400 transition-all">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">SEMESTER 8</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Tugas Akhir / Skripsi Bisnis</h4>
+                    <p class="text-slate-600 text-sm mb-4">Penyusunan karya ilmiah atau laporan komprehensif pengembangan proyek bisnis digital.</p>
+                    <div class="text-xs font-semibold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 inline-block">6 SKS • Sidang Sarjana (S.Bns.)</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="karir" class="py-20 bg-slate-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800">Prospek Masa Depan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Profesi Lulusan S1 Bisnis Digital</h2>
+                <p class="text-slate-400 mt-4">Peluang karir luas di berbagai industri nasional maupun wirausaha mandiri.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Career Card 1 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Digital Marketer &amp; Growth Strategist</h3>
+                    <p class="text-slate-400 text-sm">Merancang kampanye promosi digital, mengoptimalkan ROI iklan, dan meningkatkan penjualan online.</p>
+                </div>
+
+                <!-- Career Card 2 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">E-Commerce Specialist</h3>
+                    <p class="text-slate-400 text-sm">Mengelola operasional e-commerce, strategi marketplace, serta meningkatkan pengalaman belanja konsumen.</p>
+                </div>
+
+                <!-- Career Card 3 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Business Analyst</h3>
+                    <p class="text-slate-400 text-sm">Menganalisis performa perusahaan, mengidentifikasi peluang pasar, dan memberikan rekomendasi data.</p>
+                </div>
+
+                <!-- Career Card 4 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Digital Entrepreneur / Founder</h3>
+                    <p class="text-slate-400 text-sm">Membangun bisnis mandiri berbasis teknologi, platform online, atau layanan jasa inovatif.</p>
+                </div>
+
+                <!-- Career Card 5 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-hashtag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Social Media Strategist</h3>
+                    <p class="text-slate-400 text-sm">Mengelola branding perusahaan di platform sosial media, keterlibatan audiens, dan manajemen konten.</p>
+                </div>
+
+                <!-- Career Card 6 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">UI/UX &amp; Product Associate</h3>
+                    <p class="text-slate-400 text-sm">Menghubungkan kebutuhan bisnis dengan desain antarmuka aplikasi agar ramah bagi pengguna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kalkulator" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs font-bold border border-emerald-500/30 uppercase tracking-widest">
+                            Simulasi Biaya PMB UNAIC
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold mt-3">Hitung Perkiraan Biaya &amp; Beasiswa</h2>
+                        <p class="text-slate-300 text-sm mt-2">Dapatkan potongan khusus sesuai jalur pendaftaran dan potensi beasiswa di UNAIC Cilacap.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-12 gap-8 items-center bg-slate-900/90 p-6 sm:p-8 rounded-2xl border border-slate-800">
+                        <!-- Inputs -->
+                        <div class="md:col-span-7 space-y-5">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-2">Jalur Pendaftaran PMB:</label>
+                                <select id="calcJalur" onchange="calculateTuition()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 text-sm">
+                                    <option value="1">Gelombang Early Bird (Diskon Khusus 25%)</option>
+                                    <option value="2">Gelombang Reguler</option>
+                                    <option value="3">Jalur Prestasi Akademik / Rapor (Beasiswa s.d 40%)</option>
+                                    <option value="4">Jalur Undangan Sekolah / Kemitraan (Beasiswa s.d 50%)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-2">Skema Pembayaran:</label>
+                                <select id="calcPayment" onchange="calculateTuition()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 text-sm">
+                                    <option value="full">Pembayaran Lunas (Tambahan Potongan Rp 500.000)</option>
+                                    <option value="installment">Sistem Angsuran Per Semester</option>
+                                </select>
+                            </div>
+
+                            <div class="p-4 bg-slate-950/70 rounded-xl border border-slate-800 text-xs text-slate-400">
+                                <i class="fa-solid fa-circle-info text-emerald-400 mr-1.5"></i> 
+                                Kontak WhatsApp resmi admisi UNAIC untuk konfirmasi skema beasiswa: <strong class="text-white">0852-9350-4432</strong>
+                            </div>
+                        </div>
+
+                        <!-- Results display -->
+                        <div class="md:col-span-5 bg-gradient-to-b from-emerald-600 to-teal-700 p-6 rounded-2xl text-center space-y-4 shadow-lg">
+                            <span class="text-xs uppercase font-semibold text-emerald-100">Estimasi SPP per Semester</span>
+                            <div class="text-3xl sm:text-4xl font-extrabold text-white" id="calcResult">
+                                Rp 4.500.000
+                            </div>
+                            <div class="text-xs text-emerald-100 border-t border-emerald-400/30 pt-3">
+                                Potongan Beasiswa Teraplikasi: <br>
+                                <span class="font-bold text-amber-300 text-sm" id="calcDiscount">Rp 1.500.000 / sem</span>
+                            </div>
+                            <a href="https://wa.me/6285293504432?text=Halo%20Admin%20PMB%20UNAIC,%20saya%20ingin%20mengajukan%20beasiswa%20Prodi%20Bisnis%20Digital" 
+                               target="_blank" 
+                               class="block w-full py-3 bg-white text-emerald-900 font-bold rounded-xl hover:bg-slate-100 transition-colors text-sm shadow-md">
+                                Ajukan Beasiswa via WA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100/80 px-3 py-1 rounded-full border border-emerald-200">
+                    Lokasi &amp; Kontak Sekretariat
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Hubungi Universitas Al-Irsyad Cilacap</h2>
+                <p class="text-slate-600 mt-4">Tim PMB dan Sekretariat Prodi Bisnis Digital siap membantu memberikan informasi pendaftaran lengkap.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Direct WA Highlight Card -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl font-bold shrink-0">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs uppercase font-bold text-emerald-700">WhatsApp Layanan Cepat</span>
+                            <h4 class="text-xl font-extrabold text-slate-900">0852-9350-4432</h4>
+                            <p class="text-xs text-slate-500">Fast response jam kerja (08.00 - 16.00 WIB)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-slate-600">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-building-columns text-emerald-600 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-900 block">Fakultas Ekonomi dan Bisnis (FEB)</strong>
+                                Universitas Al-Irsyad Cilacap (UNAIC)
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-emerald-600 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-900 block">Alamat Kampus:</strong>
+                                Jl. Cerme No. 24, Sitinggil, Cilibang, Jeruklegi, Kab. Cilacap, Jawa Tengah
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-emerald-600 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-900 block">Email Resmi:</strong>
+                                humas@universitasalirsyad.ac.id
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-globe text-emerald-600 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-900 block">Website Resmi:</strong>
+                                universitasalirsyad.ac.id
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex gap-3">
+                        <a href="https://wa.me/6285293504432?text=Halo%20Admin%20PMB%20UNAIC" 
+                           target="_blank" 
+                           class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-center text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Chat WhatsApp Langsung</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed Representation / Details -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Peta Lokasi Kampus UNAIC Cilacap</h3>
+                    <div class="w-full h-72 rounded-2xl bg-slate-100 border border-slate-200 overflow-hidden relative flex items-center justify-center">
+                        <!-- Simulated map view container -->
+                        <div class="text-center p-6 space-y-3">
+                            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base">Universitas Al-Irsyad Cilacap (UNAIC)</h4>
+                            <p class="text-xs text-slate-500 max-w-sm mx-auto">
+                                Jl. Cerme No. 24, Sitinggil, Cilibang, Jeruklegi, Kabupaten Cilacap, Jawa Tengah 53252
+                            </p>
+                            <a href="https://maps.google.com/?q=Universitas+Al+Irsyad+Cilacap" 
+                               target="_blank" 
+                               class="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 hover:underline pt-2">
+                                <span>Buka di Google Maps</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                            <span class="text-xs font-semibold text-slate-500 block">Status Akreditasi</span>
+                            <span class="text-sm font-extrabold text-emerald-700">Resmi Terakreditasi BAN-PT</span>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                            <span class="text-xs font-semibold text-slate-500 block">Jalur PMB Aktif</span>
+                            <span class="text-sm font-extrabold text-slate-800">Gelombang PMB 2026/2027</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand Info -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold text-lg">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="font-extrabold text-lg text-white">UNAIC <span class="text-emerald-500">Bisnis Digital</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Program Studi S1 Bisnis Digital - Universitas Al-Irsyad Cilacap. Membentuk generasi penerus yang kompeten, kreatif, dan berintegritas.
+                    </p>
+                    <div class="pt-1">
+                        <a href="https://wa.me/6285293504432" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-900/60 border border-emerald-500/30 text-emerald-300 rounded-lg text-xs font-bold">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> 0852-9350-4432
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Navigasi Utama</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#tentang" class="hover:text-white transition-colors">Tentang Prodi UNAIC</a></li>
+                        <li><a href="#kurikulum" class="hover:text-white transition-colors">Kurikulum Perkuliahan</a></li>
+                        <li><a href="#karir" class="hover:text-white transition-colors">Prospek Karir S.Bns.</a></li>
+                        <li><a href="#kalkulator" class="hover:text-white transition-colors">Simulasi Biaya &amp; Beasiswa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Admission Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Pendaftaran PMB</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" onclick="openModal('registerModal')" class="hover:text-white transition-colors">Formulir Pendaftaran Online</a></li>
+                        <li><a href="https://wa.me/6285293504432?text=Halo%20Admin%20PMB%20UNAIC,%20saya%20ingin%20tanya%20syarat%20beasiswa" target="_blank" class="hover:text-white transition-colors">Konsultasi Beasiswa Rapor</a></li>
+                        <li><a href="#kontak" class="hover:text-white transition-colors">Lokasi Kampus Cilacap</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Kontak PMB UNAIC</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot mt-0.5 text-emerald-500"></i>
+                            <span>Jl. Cerme No. 24, Jeruklegi, Cilacap, Jawa Tengah</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-sm"></i>
+                            <span class="font-bold text-emerald-300">0852-9350-4432</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-emerald-500"></i>
+                            <span>humas@universitasalirsyad.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Program Studi S1 Bisnis Digital - Universitas Al-Irsyad Cilacap (UNAIC).</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/6285293504432" target="_blank" class="hover:text-emerald-400">WhatsApp: 0852-9350-4432</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="registerModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('registerModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 p-1">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-700">PMB UNAIC Cilacap</span>
+                <h3 class="text-2xl font-extrabold text-slate-900 mt-1">Pendaftaran Mahasiswa Baru</h3>
+                <p class="text-xs text-slate-500 mt-1">Isi formulir singkat di bawah ini. Tim PMB UNAIC akan langsung memandu via WhatsApp (0852-9350-4432).</p>
+            </div>
+
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nama Lengkap *</label>
+                    <input type="text" id="regNama" required placeholder="Contoh: Ahmad Rizky" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-500">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nomor WhatsApp *</label>
+                        <input type="tel" id="regWa" required placeholder="08xxxxxxxxxx" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Asal Kota / Sekolah *</label>
+                        <input type="text" id="regSekolah" required placeholder="Contoh: SMA 1 Cilacap" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Pilihan Jalur PMB *</label>
+                    <select id="regJalur" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-500">
+                        <option>Jalur Reguler PMB UNAIC</option>
+                        <option>Jalur Beasiswa Rapor / Prestasi</option>
+                        <option>Jalur Undangan Sekolah</option>
+                        <option>Jalur Transfer / Alih Jenjang</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all text-sm mt-2 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Kirim &amp; Hubungi WA Admisi (0852-9350-4432)</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 left-6 z-50 hidden bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 max-w-sm">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <span id="toast-message" class="text-xs font-medium leading-tight"></span>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tab Switching Function for Curriculum
+        function switchTab(yearId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-emerald-700', 'shadow-sm');
+                btn.classList.add('text-slate-600');
+            });
+
+            document.getElementById('content-' + yearId).classList.remove('hidden');
+
+            const activeBtn = document.getElementById('tab-' + yearId);
+            activeBtn.classList.add('bg-white', 'text-emerald-700', 'shadow-sm');
+            activeBtn.classList.remove('text-slate-600');
+        }
+
+        // Tuition Fee Calculator
+        function calculateTuition() {
+            const jalur = document.getElementById('calcJalur').value;
+            const payment = document.getElementById('calcPayment').value;
+
+            let baseFee = 6000000; // Standard tuition
+            let discount = 0;
+
+            if (jalur === "1") {
+                discount = 1500000;
+            } else if (jalur === "2") {
+                discount = 500000;
+            } else if (jalur === "3") {
+                discount = 2400000;
+            } else if (jalur === "4") {
+                discount = 3000000;
+            }
+
+            if (payment === "full" && discount < baseFee) {
+                discount += 500000;
+            }
+
+            let finalFee = Math.max(0, baseFee - discount);
+
+            document.getElementById('calcResult').innerText = "Rp " + finalFee.toLocaleString('id-ID');
+            document.getElementById('calcDiscount').innerText = "Rp " + discount.toLocaleString('id-ID') + " / sem";
+        }
+
+        // Modal Handlers
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Form Submit Handler -> Redirects smoothly to WhatsApp with prefilled message
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const nama = document.getElementById('regNama').value;
+            const wa = document.getElementById('regWa').value;
+            const sekolah = document.getElementById('regSekolah').value;
+            const jalur = document.getElementById('regJalur').value;
+
+            closeModal('registerModal');
+
+            // Format message for WhatsApp
+            const text = `Halo%20Admin%20PMB%20UNAIC,%20saya%20ingin%20mendaftar%20Prodi%20S1%20Bisnis%20Digital.%0A%0A*Nama:*%20${encodeURIComponent(nama)}%0A*No%20WA:*%20${encodeURIComponent(wa)}%0A*Asal%20Sekolah:*%20${encodeURIComponent(sekolah)}%0A*Jalur:*%20${encodeURIComponent(jalur)}`;
+            
+            // Redirect to target WhatsApp number 6285293504432
+            window.open(`https://wa.me/6285293504432?text=${text}`, '_blank');
+        }
+
+        // Initial setup
+        calculateTuition();
+    </script>
+</body>
+</html>
